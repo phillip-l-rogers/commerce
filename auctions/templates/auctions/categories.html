@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Categories</h2>
+    <table>
+        {% for category in categories %}
+            <tr>
+                <td class="image-cell">
+                    <a href="{% url 'category' category.id %}">
+                        <img src="{{ category.image_url }}" alt="{{ category.image_url }}" class="thumbnail" />
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'category' category.id %}">
+                        <h3>{{ category.name }} ({{ category.active_count }})</h3>
+                    </a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="2">
+                    <h3>No Categories.</h3>
+                </td>
+            </tr>            
+        {% endfor %}
+    </table>
+{% endblock %}

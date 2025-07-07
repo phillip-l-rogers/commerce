@@ -1,7 +1,7 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <h2>Active Listings</h2>
+    <h2>Your Watchlist</h2>
     <table>
         {% for listing in listings %}
             <tr>
@@ -14,13 +14,16 @@
                     <h3>{{ listing.title }}</h3>
                     <b>Price:</b> ${{ listing.price }}<br/>
                     {{ listing.description }}<br/>
+                    {% if not listing.active %}
+                    <b><i>This listing is closed.</i></b><br/>
+                    {% endif %}
                     <i>Created {{ listing.created }}</i><br/>
                 </td>
             </tr>
         {% empty %}
             <tr>
                 <td colspan="2">
-                    <h3>No Listings.</h3>
+                    <h3>No Listings in your Watchlist.</h3>
                 </td>
             </tr>            
         {% endfor %}

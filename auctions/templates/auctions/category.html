@@ -1,7 +1,8 @@
 {% extends "auctions/layout.html" %}
 
 {% block body %}
-    <h2>Active Listings</h2>
+    <h2>Active Listings in {{ category.name }}</h2>
+    <img src="{{ category.image_url }}" alt="{{ category.image_url }}" class="image"/>
     <table>
         {% for listing in listings %}
             <tr>
@@ -25,5 +26,5 @@
             </tr>            
         {% endfor %}
     </table>
-
+    
 {% endblock %}
