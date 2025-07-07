@@ -46,7 +46,7 @@
                             </div>
                         {% else %}
                             <div class="alert alert-secondary small">
-                                Sorry, {{ bid.user.username }} was the highest bidder.
+                                {{ bid.user.username }} was the highest bidder.
                             </div>
                         {% endif %}        
                     {% endif %}
@@ -69,11 +69,14 @@
                         <button type="submit" class="btn btn-primary btn-sm">Close Listing</button>
                     </form>
                 {% else %}
-                    <form action="{% url 'listing' listing.id %}" method="post" class="mt-2>
+                    <form action="{% url 'listing' listing.id %}" method="post" class="mt-2">
                         {% csrf_token %}
                         <div class="form-group">
                             {{ bid_form.price.label_tag }}
                             {{ bid_form.price }}
+                            {% for error in bid_form.price.errors %}
+                                <div class="text-danger small">{{ error }}</div>
+                            {% endfor %}                            
                         </div>
                         <button type="submit" class="btn btn-primary btn-sm">Place Bid</button>
                     </form>
