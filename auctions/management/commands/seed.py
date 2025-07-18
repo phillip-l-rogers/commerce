@@ -1,9 +1,10 @@
 # auctions/management/commands/seed.py
 
-from auctions.models import Bid, Category, Comment, Listing
 from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand
 from django.utils import timezone
+
+from auctions.models import Bid, Category, Comment, Listing
 
 User = get_user_model()
 
@@ -41,7 +42,7 @@ class Command(BaseCommand):
             starting_bid=300,
             image_url="https://tse3.mm.bing.net/th/id/OIP.tXefyRx69wGNHqj5MoXYDAHaLl",
             category=electronics,
-            owner=alice,
+            user=alice,
             active=True,
         )
         Listing.objects.get_or_create(
@@ -50,7 +51,7 @@ class Command(BaseCommand):
             starting_bid=80,
             image_url="https://di2ponv0v5otw.cloudfront.net/posts/2022/12/30/63af446d02760b0ef737b617/m_63af44d902760b00e637b9d4.jpg",
             category=fashion,
-            owner=bob,
+            user=bob,
             active=True,
         )
         listing = Listing.objects.get(title="Smartphone")
