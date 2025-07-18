@@ -21,9 +21,9 @@ An eBay-style auction platform where users can list items, place bids, comment o
 ## 📸 Screenshots
 
 <p float="left">
-  <img src="screenshots/home.png" width="300"/>
-  <img src="screenshots/create.png" width="300"/>
-  <img src="screenshots/listing.png" width="300"/>
+  <img src="screenshots/home.png" height="300"/>
+  <img src="screenshots/create.png" height="300"/>
+  <img src="screenshots/listing.png" height="300"/>
 </p>
 
 ---
