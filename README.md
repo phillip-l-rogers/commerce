@@ -18,9 +18,20 @@ An eBay-style auction platform where users can list items, place bids, comment o
 
 ---
 
-## 🖼️ Screenshots
+## 📸 Screenshots
 
-> *(Add screenshots here, or link to demo video)*
+<p float="left">
+  <img src="screenshots/home.png" width="300"/>
+  <img src="screenshots/create.png" width="300"/>
+  <img src="screenshots/listing.png" width="300"/>
+</p>
+
+---
+
+## ▶️ Live Demo
+
+- 🌐 Live site: [https://commerce-2onf.onrender.com](https://commerce-2onf.onrender.com)
+- 📺 Video demo: [Watch on YouTube](https://youtu.be/4660HxMfK10)
 
 ---
 
@@ -40,47 +51,51 @@ An eBay-style auction platform where users can list items, place bids, comment o
    ```bash
    git clone https://github.com/phillip-l-rogers/commerce.git
    cd commerce
-Create and activate a virtual environment:
+   ```
+   
+2. **Create and activate a virtual environment:**
 
-bash
-Copy
-Edit
-python -m venv venv
-source venv/bin/activate    # On Windows: venv\Scripts\activate
-Install dependencies:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate    # On Windows: venv\Scripts\activate
+   ```
 
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Apply migrations:
+3. **Install dependencies:**
 
-bash
-Copy
-Edit
-python manage.py migrate
-Run the development server:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-bash
-Copy
-Edit
-python manage.py runserver
-Visit:
-http://127.0.0.1:8000/ in your browser.
+4. **Apply migrations:**
 
-🧪 Testing Tips
-Register multiple users to simulate bidding interactions
+   ```bash
+   python manage.py migrate
+   ```
 
-Test tie-breakers by placing bids with equal value
+5. **Run the development server:**
 
-Add, remove, and view items in your watchlist
+   ```bash
+   python manage.py runserver
+   ```
+   
+6. **Visit:**
 
-Use the Django admin panel to verify database changes
+   `http://127.0.0.1:8000/` in your browser.
+   
+---
 
-📁 Project Structure
-bash
-Copy
-Edit
+## 🧪 Testing Tips
+
+- Register multiple users to simulate bidding interactions
+- Test tie-breakers by placing bids with equal value
+- Add, remove, and view items in your watchlist
+- Use the Django admin panel to verify database changes
+
+---
+
+## 📁 Project Structure
+
+```bash
 commerce/
 ├── auctions/          # Main app
 │   ├── models.py
@@ -89,10 +104,17 @@ commerce/
 │   └── templates/
 ├── manage.py
 └── requirements.txt
-📚 Acknowledgments
-This project was completed as part of CS50W: Web Programming with Python and JavaScript
+```
 
-Built using the Django web framework and Bootstrap
+---
 
-📜 License
-This project is for educational purposes and is not licensed for commercial use.
+## 📚 Acknowledgments
+
+- This project was completed as part of [CS50’s Web Programming with Python and JavaScript (CS50W)](https://cs50.harvard.edu/web/)
+- Built using the Django web framework and Bootstrap
+
+---
+
+## 📜 License
+
+- This project was completed as part of Harvard CS50W. Educational use only.
