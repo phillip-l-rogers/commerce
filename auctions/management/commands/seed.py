@@ -54,5 +54,5 @@ class Command(BaseCommand):
         )
         listing = Listing.objects.get(title="Smartphone")
         Bid.objects.create(price=350, user=bob, listing=listing)
-        Comment.objects.create(user=charlie, listing=listing, content="Is it unlocked?")
+        Comment.objects.create(user=charlie, listing=listing, text="Is it unlocked?")
         self.stdout.write(self.style.SUCCESS("✅ Listings and categories created"))
