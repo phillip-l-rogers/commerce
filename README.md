@@ -33,6 +33,7 @@ An eBay-style auction platform where users can list items, place bids, comment o
 - **Backend:** Django (Python)
 - **Frontend:** HTML, CSS, Bootstrap
 - **Database:** SQLite
+- **AJAX:** Fetch API for asynchronous operations
 - **Auth:** Django’s built-in authentication system
 
 ---
