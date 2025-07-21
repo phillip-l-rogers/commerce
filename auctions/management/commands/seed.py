@@ -15,18 +15,16 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         # Create users
         users = [
-            {"username": "alice", "email": "alice@example.com", "password": "testpass"},
-            {"username": "bob", "email": "bob@example.com", "password": "testpass"},
-            {
-                "username": "charlie",
-                "email": "charlie@example.com",
-                "password": "testpass",
-            },
+            {"username": "alice", "password": "testpass"},
+            {"username": "bob", "password": "testpass"},
+            {"username": "charlie", "password": "testpass"},
         ]
-        for u in users:
-            if not User.objects.filter(username=u["username"]).exists():
+        for user in users:
+            username = user["username"]
+            email = f"{username}@example.com"
+            if not User.objects.filter(username=username).exists():
                 User.objects.create_user(
-                    username=u["username"], email=u["email"], password=u["password"]
+                    username=username, email=email, password=user["password"]
                 )
         alice = User.objects.get(username="alice")
         bob = User.objects.get(username="bob")
@@ -39,7 +37,7 @@ class Command(BaseCommand):
         Listing.objects.get_or_create(
             title="Smartphone",
             description="Brand new smartphone with latest features.",
-            starting_bid=300,
+            starting_price=300,
             image_url="https://tse3.mm.bing.net/th/id/OIP.tXefyRx69wGNHqj5MoXYDAHaLl",
             category=electronics,
             user=alice,
@@ -48,13 +46,13 @@ class Command(BaseCommand):
         Listing.objects.get_or_create(
             title="Leather Jacket",
             description="Stylish leather jacket, gently used.",
-            starting_bid=80,
+            starting_price=80,
             image_url="https://di2ponv0v5otw.cloudfront.net/posts/2022/12/30/63af446d02760b0ef737b617/m_63af44d902760b00e637b9d4.jpg",
             category=fashion,
             user=bob,
             active=True,
         )
         listing = Listing.objects.get(title="Smartphone")
-        Bid.objects.create(amount=350, user=bob, listing=listing)
+        Bid.objects.create(price=350, user=bob, listing=listing)
         Comment.objects.create(user=charlie, listing=listing, content="Is it unlocked?")
         self.stdout.write(self.style.SUCCESS("✅ Listings and categories created"))
