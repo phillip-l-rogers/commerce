@@ -28,6 +28,15 @@ An eBay-style auction platform where users can list items, place bids, comment o
 
 ---
 
+## 🛠️ Tech Stack
+
+- **Backend:** Django (Python)
+- **Frontend:** HTML, CSS, Bootstrap
+- **Database:** SQLite
+- **Auth:** Django’s built-in authentication system
+
+---
+
 ## ▶️ Live Demo
 
 - 🌐 Live site: [https://commerce-2onf.onrender.com](https://commerce-2onf.onrender.com)
@@ -35,12 +44,16 @@ An eBay-style auction platform where users can list items, place bids, comment o
 
 ---
 
-## 🛠️ Tech Stack
+## 🧪 Testing Tips
 
-- **Backend:** Django (Python)
-- **Frontend:** HTML, CSS, Bootstrap
-- **Database:** SQLite
-- **Auth:** Django’s built-in authentication system
+- Use pre-seeded accounts to test:
+  - alice / testpass
+  - bob / testpass
+  - charlie / testpass
+- Register multiple users to simulate bidding interactions
+- Test tie-breakers by placing bids with equal value
+- Add, remove, and view items in your watchlist
+- Use the Django admin panel to verify database changes
 
 ---
 
@@ -82,15 +95,6 @@ An eBay-style auction platform where users can list items, place bids, comment o
 
    `http://127.0.0.1:8000/` in your browser.
    
----
-
-## 🧪 Testing Tips
-
-- Register multiple users to simulate bidding interactions
-- Test tie-breakers by placing bids with equal value
-- Add, remove, and view items in your watchlist
-- Use the Django admin panel to verify database changes
-
 ---
 
 ## 📁 Project Structure
